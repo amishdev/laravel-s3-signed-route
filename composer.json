@@ -1,7 +1,7 @@
 {
     "name": "amish/laravel-s3-signed-route",
     "description": "Upload to s3 from your frontend using a pre-signed route.",
-    "version": "0.1.0",
+    "version": "0.1.1gst",
     "license": "MIT",
     "authors": [
         {
