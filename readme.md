@@ -81,7 +81,7 @@ If you discover any security related issues, please email author@email.com inste
 
 ## Credits
 
-- [Author Name][link-author]
+- [Christian Pavilonis][link-author]
 - [All Contributors][link-contributors]
 
 ## License
