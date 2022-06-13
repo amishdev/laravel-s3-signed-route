@@ -3,29 +3,73 @@
 [![Latest Version on Packagist][ico-version]][link-packagist]
 [![Total Downloads][ico-downloads]][link-downloads]
 [![Build Status][ico-travis]][link-travis]
-[![StyleCI][ico-styleci]][link-styleci]
 
-This is where your description should go. Take a look at [contributing.md](contributing.md) to see a to do list.
+[//]: # ([![StyleCI][ico-styleci]][link-styleci])
+
+Use to securely upload directly to a s3 bucket from your frontend. This package was designed to upload to s3 with [Uppy](https://uppy.io/docs/aws-s3/#Generating-a-presigned-upload-URL-server-side) but it could be used with other libraries.
+
+
 
 ## Installation
 
 Via Composer
 
 ``` bash
-$ composer require state/s3signedroute
+composer require amish/laravel-s3-signed-route
 ```
 
 ## Usage
 
-## Change log
-
-Please see the [changelog](changelog.md) for more information on what has changed recently.
-
-## Testing
-
-``` bash
-$ composer test
+Register the s3 signing route with the macro, then apply the middleware, etc.
+The route is registered with the name 's3-signed-route'.
+```php
+Route::signedS3Route()->middleware(['auth', ...]);
 ```
+### Usage with Uppy
+```javascript
+let uppy = new Uppy({
+    allowMultipleUploads: false,
+    debug: true,
+    restrictions: {
+        allowedFileTypes: ['*'],
+        maxNumberOfFiles: 1,
+        minNumberOfFiles: 1,
+    },
+}).use(AwsS3, {
+    getUploadParameters: (file) => {
+        // Send a request to our signing endpoint. route('s3-signed-route')
+        return fetch(signingEndpoint, {
+            method: 'post',
+            // Send and receive JSON.
+            headers: {
+                accept: 'application/json',
+                'content-type': 'application/json',
+            },
+            body: JSON.stringify({
+                filename: file.name,
+                contentType: file.type,
+                directory: 'uploads',
+                _token: document.querySelector('[name=csrf-token]').content,
+            }),
+        })
+        .then(response => response.json())
+        .then(data => {
+            // Return an object in the correct shape.
+            return {
+                method: data.method,
+                url: data.url,
+                fields: data.fields,
+                // Provide content type header required by S3
+                headers: {
+                    'Content-Type': file.type,
+                },
+            }
+        })
+    },
+});
+```
+Refer to [Uppy's docs](https://uppy.io/docs/) for more configuration options.
+
 
 ## Contributing
 
