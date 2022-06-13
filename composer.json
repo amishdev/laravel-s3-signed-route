@@ -8,7 +8,7 @@
             "email": "_@christians.email",
             "homepage": "https://christianpav.com"
         }
-    ],gst
+    ],
     "homepage": "https://github.com/state/s3signedroute",
     "keywords": ["Laravel", "AWS", "S3"],
     "require": {
