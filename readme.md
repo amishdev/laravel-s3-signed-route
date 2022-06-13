@@ -88,14 +88,14 @@ If you discover any security related issues, please email author@email.com inste
 
 MIT. Please see the [license file](license.md) for more information.
 
-[ico-version]: https://img.shields.io/packagist/v/state/s3signedroute.svg?style=flat-square
-[ico-downloads]: https://img.shields.io/packagist/dt/state/s3signedroute.svg?style=flat-square
-[ico-travis]: https://img.shields.io/travis/state/s3signedroute/master.svg?style=flat-square
+[ico-version]: https://img.shields.io/packagist/v/amish/laravel-s3-signed-route.svg?style=flat-square
+[ico-downloads]: https://img.shields.io/packagist/dt/amish/laravel-s3-signed-route.svg?style=flat-square
+[ico-travis]: https://img.shields.io/travis/amish/laravel-s3-signed-route/master.svg?style=flat-square
 [ico-styleci]: https://styleci.io/repos/12345678/shield
 
-[link-packagist]: https://packagist.org/packages/state/s3signedroute
-[link-downloads]: https://packagist.org/packages/state/s3signedroute
-[link-travis]: https://travis-ci.org/state/s3signedroute
+[link-packagist]: https://packagist.org/packages/amish/laravel-s3-signed-route
+[link-downloads]: https://packagist.org/packages/amish/laravel-s3-signed-route
+[link-travis]: https://travis-ci.org/amish/laravel-s3-signed-route
 [link-styleci]: https://styleci.io/repos/12345678
-[link-author]: https://github.com/state
+[link-author]: https://github.com/amishdev
 [link-contributors]: ../../contributors
