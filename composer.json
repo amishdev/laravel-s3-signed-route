@@ -1,7 +1,6 @@
 {
     "name": "amish/laravel-s3-signed-route",
     "description": "Upload to s3 from your frontend using a pre-signed route.",
-    "version": "0.1.1gst",
     "license": "MIT",
     "authors": [
         {
@@ -9,12 +8,12 @@
             "email": "_@christians.email",
             "homepage": "https://christianpav.com"
         }
-    ],
+    ],gst
     "homepage": "https://github.com/state/s3signedroute",
     "keywords": ["Laravel", "AWS", "S3"],
     "require": {
         "illuminate/support": "~9",
-        "aws/aws-sdk-php": ">=3.225.2"
+        "aws/aws-sdk-php": "^3.225.2"
     },
     "require-dev": {
         "phpunit/phpunit": "~9.0",
